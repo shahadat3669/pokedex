@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint . && npx stylelint \"**/*.{css,scss}\" && npx hint .",
     "start": "webpack serve --open", 
-
-    "build": "webpack"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
