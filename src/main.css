@@ -2,6 +2,7 @@
 
 :root {
   --font-poppins: 'Poppins', sans-serif;
+  --font-bold: 600;
 
   --grass: rgba(95, 189, 88, 1);
   --bug: rgba(146, 188, 44, 1);
@@ -38,7 +39,46 @@
   --space-32: 2rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-poppins);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  list-style: none;
+}
+
 .title {
   font-family: var(--font-poppins);
   color: var(--text-dark);
+}
+
+.nav-logo {
+  display: block;
+  text-align: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: var(--font-bold);
+}
+
+.center-text {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border: 0.125rem solid black;
+  border-radius: 50%;  
+  width: 5rem;
+  height: 5rem;
 }
