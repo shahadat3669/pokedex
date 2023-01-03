@@ -1,1 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+
+  --grass: rgba(95, 189, 88, 1);
+  --bug: rgba(146, 188, 44, 1);
+  --dark: rgba(89, 87, 97, 1);
+  --dragon: rgba(12, 105, 200, 1);
+  --electric: rgba(242, 217, 78, 1);
+  --fairy: rgba(238, 144, 230, 1);
+  --fighting: rgba(211, 66, 95, 1);
+  --fire: rgba(220, 135, 47, 1);
+  --flying: rgba(161, 187, 236, 1);
+  --ghost: rgba(95, 109, 188, 1);
+  --ground: rgba(218, 124, 77, 1);
+  --psychic: rgba(117, 208, 193, 1);
+  --steel: rgba(86, 149, 163, 1);
+  --water: rgba(83, 157, 223, 1);
+  --poison: rgba(183, 99, 207, 1);
+  --normal: rgba(160, 162, 159, 1);
+  --rock: rgba(163, 140, 33, 1);
+  --ice: rgba(117, 208, 193, 1);
+}
