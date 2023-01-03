@@ -21,4 +21,19 @@
   --normal: rgba(160, 162, 159, 1);
   --rock: rgba(163, 140, 33, 1);
   --ice: rgba(117, 208, 193, 1);
+
+  --text-dark: #1d293f;
+  --bg-red: #c82e19;
+  --bg-dark: #0d131a;
+  --white: #fff;
+
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  --radius-20: 1.25rem;
+  --radius-8: 0.5rem;
+
+  --space-8: 0.5rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
 }
