@@ -3,7 +3,6 @@
 :root {
   --font-poppins: 'Poppins', sans-serif;
   --font-bold: 600;
-
   --grass: rgba(95, 189, 88, 1);
   --bug: rgba(146, 188, 44, 1);
   --dark: rgba(89, 87, 97, 1);
@@ -22,33 +21,46 @@
   --normal: rgba(160, 162, 159, 1);
   --rock: rgba(163, 140, 33, 1);
   --ice: rgba(117, 208, 193, 1);
-
   --text-dark: #1d293f;
   --bg-red: #c82e19;
   --bg-dark: #0d131a;
   --white: #fff;
-
-  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  --box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   --radius-20: 1.25rem;
   --radius-8: 0.5rem;
-
   --space-8: 0.5rem;
   --space-16: 1rem;
   --space-24: 1.5rem;
   --space-32: 2rem;
 }
 
+/* basic styles  */
 * {
   margin: 0;
   padding: 0;
   font-family: var(--font-poppins);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  width: 86vw;
+  margin: 0 auto;
+}
+
+/* header  */
+.header {
+  margin: 2rem 0;
+}
+
 .nav-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2.5rem;
 }
 
@@ -78,7 +90,7 @@
   justify-items: center;
   align-items: center;
   border: 0.125rem solid black;
-  border-radius: 50%;  
+  border-radius: 50%;
   width: 5rem;
   height: 5rem;
 }
