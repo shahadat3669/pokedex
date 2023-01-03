@@ -94,3 +94,15 @@ body {
   width: 5rem;
   height: 5rem;
 }
+
+.footer {
+  height: 5rem;
+  border-top: 1px solid var(--dark);
+  border-bottom: 1px solid var(--dark);
+  display: flex;
+  align-items: center;
+}
+
+.footer p {
+  color: var(--dark);
+}
