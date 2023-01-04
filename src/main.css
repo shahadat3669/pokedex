@@ -129,7 +129,7 @@ body {
 
   20%,
   80% {
-    transform: translate3d(0px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   30%,
@@ -254,7 +254,7 @@ body {
 }
 
 .poke-btn:active {
-  filter:invert(25%)
+  filter: invert(25%);
 }
 
 .poke-btn span {
@@ -264,7 +264,7 @@ body {
   transition: 0.5s;
 }
 
-.poke-btn span:after {
+.poke-btn span::after {
   content: '\00bb';
   font-size: 2rem;
   line-height: 100%;
@@ -279,7 +279,7 @@ body {
   padding-right: 25px;
 }
 
-.poke-btn:hover span:after {
+.poke-btn:hover span::after {
   opacity: 1;
   right: 0;
 }
