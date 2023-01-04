@@ -1,5 +1,5 @@
 import './main.css';
-
+import start from './modules/start.js';
 import './assets/icon.png';
 import './assets/oval.svg';
 import './assets/bug.svg';
@@ -22,5 +22,6 @@ import './assets/steel.svg';
 import './assets/water.svg';
 import generatePokemon from './modules/generatePokemon.js';
 
+start();
 const popUpbtn = document.querySelector('#popUpbtn');
 popUpbtn.addEventListener('click', generatePokemon);

@@ -3,6 +3,7 @@
 :root {
   --font-poppins: 'Poppins', sans-serif;
   --font-bold: 600;
+  --font-regular: 400;
   --grass: rgba(95, 189, 88, 1);
   --bug: rgba(146, 188, 44, 1);
   --dark: rgba(89, 87, 97, 1);
@@ -22,12 +23,14 @@
   --rock: rgba(163, 140, 33, 1);
   --ice: rgba(117, 208, 193, 1);
   --text-dark: #1d293f;
+  --text-light: #99a3ad;
   --bg-red: #c82e19;
   --bg-dark: #0d131a;
   --white: #fff;
   --box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   --radius-20: 1.25rem;
   --radius-8: 0.5rem;
+  --radius-4: 0.25rem;
   --space-8: 0.5rem;
   --space-16: 1rem;
   --space-24: 1.5rem;
@@ -39,6 +42,7 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-poppins);
+  box-sizing: border-box;
 }
 
 body {
@@ -95,6 +99,213 @@ body {
   height: 5rem;
 }
 
+/* main-cont */
+.poke-cards-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 2rem 0 4rem 0;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.poke-card {
+  width: 16rem;
+  height: 19rem;
+  border-radius: var(--radius-8);
+  background: gold;
+  padding: 1rem;
+}
+
+.poke-card:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(1px, 0, 0);
+  }
+}
+
+.poke-show {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 40%;
+  background: url(./assets/poke-show-back.svg);
+  background-size: cover;
+}
+
+.poke-id {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: var(--font-bold);
+  color: var(--text-dark);
+}
+
+.poke-id::before {
+  content: '#';
+}
+
+.poke-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%) scale(1);
+  height: 78%;
+  animation: jump 4s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(-50%, -40%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -60%) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+.poke-gen {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: var(--font-bold);
+  width: 1.5rem;
+  height: 1rem;
+  background: white;
+  border-radius: var(--radius-8);
+}
+
+.poke-dets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.poke-name {
+  text-transform: capitalize;
+  font-weight: var(--font-bold);
+  font-size: 0.75rem;
+}
+
+.poke-types {
+  font-size: 0.75rem;
+}
+
+.poke-likes {
+  text-align: right;
+}
+
+.heart-icon-cont {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+  background: white;
+}
+
+.like-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+}
+
+.likes-count {
+  font-weight: var(--font-regular);
+  font-size: 0.5rem;
+  color: var(--text-dark);
+  margin-top: 0.3rem;
+}
+
+.poke-btn {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.poke-btn:active {
+  filter: invert(25%);
+}
+
+.poke-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.poke-btn span::after {
+  content: '\00bb';
+  font-size: 2rem;
+  line-height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: -0.5rem;
+  right: -2rem;
+  transition: 0.5s;
+}
+
+.poke-btn:hover span {
+  padding-right: 25px;
+}
+
+.poke-btn:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.com-btn,
+.res-btn {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: var(--radius-4);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.15rem;
+  color: white;
+}
+
+.com-btn {
+  background: var(--bg-red);
+}
+
+.res-btn {
+  margin-top: 0.5rem;
+  background: var(--bg-dark);
+}
+
+/* footer */
 .footer {
   height: 5rem;
   border-top: 1px solid var(--dark);
