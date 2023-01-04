@@ -21,6 +21,7 @@ class PokeView {
 
     let img = document.createElement('img');
     img.setAttribute('class', 'poke-img');
+    img.setAttribute('loading', 'lazy');
     img.src = this.#presenter.imgLink;
     div.appendChild(img);
 
