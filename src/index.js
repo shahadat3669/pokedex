@@ -1,5 +1,5 @@
 import './main.css';
 import './assets/icon.png';
-import test from './modules/test.js';
+import start from './modules/start.js';
 
-test();
+start();
