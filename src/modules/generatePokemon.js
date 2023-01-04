@@ -73,6 +73,44 @@ const generatePokemon = async () => {
   const generatedPokeBg = await generatePokeBg(types);
   const abilitiesHtml = await generateAbilitiesHtml(abilities);
   const statsHtml = await generateStatsHtml(stats);
+
+  const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
+    <div class="popup__img-container" style="${generatedPokeBg}">
+      <img class="popup__img" src="${img}" alt="${name}" />
+      <img src="./assets/oval.svg" alt="" class="popup__img-bg" />
+    </div>
+    <div class="popup__content">
+      <div class="popup__content-top">
+        <h2 class="title-secondary">${name}</h2>
+        <p>21 Likes</p>
+      </div>
+      <div class="types">
+        ${typesHtml}
+      </div>
+      <div class="details-container">
+        <div class="container--progress">
+          <h4 class="title-4">Base status:</h4>
+          ${statsHtml}
+        </div>
+        <div class="details-right">
+          <div class="measerments">
+            <h4 class="title-4">Measurements:</h4>
+            <p class="measurement">
+    <span class="measurement__title">Height : </span> ${height} M
+            </p>
+            <p class="measurement">
+    <span class="measurement__title">weight : </span> ${weight} kg
+            </p>
+          </div>
+          <div class="abilities">
+            <h4 class="title-4">Abilities:</h4>
+            ${abilitiesHtml}
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>`;
+  pokiPopup.innerHTML = generatedPokemonHtml;
 };
 
 export default generatePokemon;
