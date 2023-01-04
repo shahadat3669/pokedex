@@ -30,6 +30,7 @@
   --box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   --radius-20: 1.25rem;
   --radius-8: 0.5rem;
+  --radius-4: 0.25rem;
   --space-8: 0.5rem;
   --space-16: 1rem;
   --space-24: 1.5rem;
@@ -194,6 +195,27 @@ body {
   font-size: 0.5rem;
   color: var(--text-light);
   margin-top: 0.3rem;
+}
+
+.com-btn,
+.res-btn {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: var(--radius-4);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.15rem;
+  color: white;
+}
+
+.com-btn{
+  background: var(--bg-red);
+}
+
+.res-btn {
+  margin-top: 0.5rem;
+  background: var(--bg-dark);
 }
 
 /* footer */
