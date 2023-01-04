@@ -1,4 +1,5 @@
 import PokeModel from './PokeModel.js';
+import PokePresenter from './PokePresenter.js';
 
 class PokeApiService {
   #baseUrl;
@@ -25,7 +26,7 @@ class PokeApiService {
     types.forEach((element) => {
       pokeTypes.push(element.type.name);
     });
-    return new PokeModel(id, name, sprites.other.dream_world.front_default, pokeTypes);
+    return new PokePresenter(id, name, sprites.other.dream_world.front_default, pokeTypes);
   }
 }
 export default PokeApiService;
