@@ -1,7 +1,6 @@
 import './main.css';
 
 import './assets/icon.png';
-import './assets/first.png';
 import './assets/oval.svg';
 import './assets/bug.svg';
 import './assets/dark.svg';
