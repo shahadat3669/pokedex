@@ -78,15 +78,19 @@ class PokeView {
     div.setAttribute('class', 'poke-btns');
     let btn = document.createElement('button');
     btn.setAttribute('type', 'button');
-    btn.setAttribute('class', 'com-btn');
-    btn.innerText = 'COMMENTS';
+    btn.setAttribute('class', 'com-btn poke-btn');
+    let span = document.createElement('span');
+    span.innerText = 'COMMENTS';
+    btn.appendChild(span);
     btn.addEventListener('click', this.#presenter.openComments);
     div.appendChild(btn);
 
     btn = document.createElement('button');
     btn.setAttribute('type', 'button');
-    btn.setAttribute('class', 'res-btn');
-    btn.innerText = 'RESERVATIONS';
+    btn.setAttribute('class', 'res-btn poke-btn');
+    span = document.createElement('span');
+    span.innerText = 'RESERVATIONS';
+    btn.appendChild(span);
     btn.addEventListener('click', this.#presenter.openReservations);
     div.appendChild(btn);
     pokeCard.appendChild(div);

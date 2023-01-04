@@ -129,18 +129,18 @@ body {
 
   20%,
   80% {
-    transform: translate3d(2px, 0, 0);
+    transform: translate3d(0px, 0, 0);
   }
 
   30%,
   50%,
   70% {
-    transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-1px, 0, 0);
   }
 
   40%,
   60% {
-    transform: translate3d(4px, 0, 0);
+    transform: translate3d(1px, 0, 0);
   }
 }
 
@@ -244,8 +244,44 @@ body {
 .likes-count {
   font-weight: var(--font-regular);
   font-size: 0.5rem;
-  color: var(--text-light);
+  color: var(--text-dark);
   margin-top: 0.3rem;
+}
+
+.poke-btn {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.poke-btn:active {
+  filter:invert(25%)
+}
+
+.poke-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.poke-btn span:after {
+  content: '\00bb';
+  font-size: 2rem;
+  line-height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: -0.5rem;
+  right: -2rem;
+  transition: 0.5s;
+}
+
+.poke-btn:hover span {
+  padding-right: 25px;
+}
+
+.poke-btn:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .com-btn,
