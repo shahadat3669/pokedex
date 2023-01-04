@@ -22,4 +22,5 @@ import './assets/steel.svg';
 import './assets/water.svg';
 import generatePokemon from './modules/generatePokemon.js';
 
-generatePokemon();
+const popUpbtn = document.querySelector('#popUpbtn');
+popUpbtn.addEventListener('click', generatePokemon);
