@@ -301,3 +301,18 @@ body {
 [tooltip='']::after {
   display: none !important;
 }
+
+/* key frames  */
+@keyframes tooltips-1 {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-2 {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
+}
