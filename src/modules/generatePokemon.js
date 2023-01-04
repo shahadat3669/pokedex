@@ -75,6 +75,7 @@ const generatePokemon = async () => {
   const statsHtml = await generateStatsHtml(stats);
 
   const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
+  <a class="close" href="#">&times;</a>
     <div class="popup__img-container" style="${generatedPokeBg}">
       <img class="popup__img" src="${img}" alt="${name}" />
       <img src="./assets/oval.svg" alt="" class="popup__img-bg" />
