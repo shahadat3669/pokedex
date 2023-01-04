@@ -12,10 +12,12 @@ class PokeListView {
     return this.#ui;
   }
 
-  #createDOMElements = () => {
+  #createDOMElements = async () => {
     const pokeList = document.createElement('div');
     pokeList.setAttribute('class', 'poke-cards-cont');
-    this.#presenter.cardsUi.forEach((cardUi) => {
+    const list = await this.#presenter.cardsUi;
+
+    list.forEach((cardUi) => {
       pokeList.appendChild(cardUi);
     });
 
