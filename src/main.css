@@ -117,12 +117,32 @@ body {
   padding: 1rem;
 }
 
+.poke-card:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
 .poke-show {
   position: relative;
   text-align: center;
   width: 100%;
   height: 40%;
-  background: lemonchiffon;
+  background: url(./assets/poke-show-back.svg);
+  background-size: cover;
 }
 
 .poke-id {
@@ -142,8 +162,22 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%) scale(1);
   height: 78%;
+
+  animation: jump 4s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(-50%, -40%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -40%) scale(1);
+  }
 }
 
 .poke-gen {
