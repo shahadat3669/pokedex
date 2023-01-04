@@ -106,3 +106,13 @@ body {
 .footer p {
   color: var(--dark);
 }
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #000;
+}
