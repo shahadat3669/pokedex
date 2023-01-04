@@ -1,3 +1,4 @@
+import heartIcon from '../assets/heart-icon.svg';
 class PokeView {
   #presenter;
 
@@ -15,10 +16,10 @@ class PokeView {
   #createDOMElements = () => {
     const pokeCard = document.createElement('div');
     pokeCard.setAttribute('class', 'poke-card');
-    const div = document.createElement('div');
+    let div = document.createElement('div');
     div.setAttribute('class', 'poke-show');
 
-    const img = document.createElement('img');
+    let img = document.createElement('img');
     img.setAttribute('class', 'poke-img');
     img.src = this.#presenter.imgLink;
     div.appendChild(img);
@@ -32,6 +33,42 @@ class PokeView {
     p.setAttribute('class', 'poke-gen');
     p.innerText = this.#presenter.gen;
     div.appendChild(p);
+    pokeCard.appendChild(div);
+
+    // Pokemon details
+    div = document.createElement('div');
+    div.setAttribute('class', 'poke-dets');
+    let div2 = document.createElement('div');
+    div2.setAttribute('class', 'poke-data');
+
+    p = document.createElement('p');
+    p.setAttribute('class', 'poke-name');
+    p.innerText = this.#presenter.name;
+    div2.appendChild(p);
+
+    p = document.createElement('p');
+    p.setAttribute('class', 'poke-types');
+    p.innerText = this.#presenter.types;
+    div2.appendChild(p);
+    div.appendChild(div2);
+    pokeCard.appendChild(div);
+
+    div2 = document.createElement('div');
+    div2.setAttribute('class', 'poke-likes');
+    const iconCont = document.createElement('div');
+    iconCont.setAttribute('class', 'heart-icon-cont');
+
+    img = document.createElement('img');
+    img.setAttribute('class', 'like-icon');
+    img.src = heartIcon;
+    iconCont.appendChild(img);
+    div2.appendChild(iconCont);
+
+    p = document.createElement('p');
+    p.setAttribute('class', 'likes-count');
+    p.innerText = `${this.#presenter.likes} likes`;
+    div2.appendChild(p);
+    div.appendChild(div2);
     pokeCard.appendChild(div);
 
     return pokeCard;
