@@ -16,8 +16,7 @@ const generatePokeBg = async (types) => {
     startColor = '#fff';
     endColor = '#fff';
   }
-  const result =
-    await `background: linear-gradient(${startColor}, ${endColor})`;
+  const result = await `background: linear-gradient(${startColor}, ${endColor})`;
   return result;
 };
 
@@ -67,7 +66,9 @@ const generateAbilitiesHtml = (abilities) => {
 
 const generatePokemon = async () => {
   const result = await getPokemonData();
-  const { abilities, height, weight, id, name, stats, types, sprites } = result;
+  const {
+    abilities, height, weight, id, name, stats, types, sprites,
+  } = result;
   const img = sprites.other.dream_world.front_default;
   const typesHtml = await generateTypesHtml(types);
   const generatedPokeBg = await generatePokeBg(types);
