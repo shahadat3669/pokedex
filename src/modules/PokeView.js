@@ -71,6 +71,24 @@ class PokeView {
     div.appendChild(div2);
     pokeCard.appendChild(div);
 
+    // Buttons
+    div = document.createElement('div');
+    div.setAttribute('class', 'poke-btns');
+    let btn = document.createElement('button');
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('class', 'com-btn');
+    btn.innerText = 'COMMENTS';
+    btn.addEventListener('click', this.#presenter.openComments);
+    div.appendChild(btn);
+
+    btn = document.createElement('button');
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('class', 'res-btn');
+    btn.innerText = 'RESERVATIONS';
+    btn.addEventListener('click', this.#presenter.openReservations);
+    div.appendChild(btn);
+    pokeCard.appendChild(div);
+
     return pokeCard;
   }
 }
