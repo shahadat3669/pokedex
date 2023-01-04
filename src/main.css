@@ -215,3 +215,34 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.types {
+  display: flex;
+  gap: 1rem;
+}
+
+.type-img {
+  height: 3rem;
+}
+
+.details-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.details-container > * {
+  width: 48%;
+}
+
+.title-4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.abilities {
+  margin-top: 1rem;
+}
+
+.ability {
+  text-transform: capitalize;
+}
