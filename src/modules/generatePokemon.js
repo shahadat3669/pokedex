@@ -55,12 +55,23 @@ const generateStatsHtml = (stats) => {
   return generateHtml;
 };
 
+const generateAbilitiesHtml = (abilities) => {
+  let generateHtml = '';
+  if (abilities.length > 0) {
+    abilities.forEach((ability) => {
+      generateHtml += `<p class="ability">${ability.ability.name}</p>`;
+    });
+  }
+  return generateHtml;
+};
+
 const generatePokemon = async () => {
   const result = await getPokemonData();
   const { abilities, height, weight, id, name, stats, types, sprites } = result;
   const img = sprites.other.dream_world.front_default;
   const typesHtml = await generateTypesHtml(types);
   const generatedPokeBg = await generatePokeBg(types);
+  const abilitiesHtml = await generateAbilitiesHtml(abilities);
   const statsHtml = await generateStatsHtml(stats);
 };
 
