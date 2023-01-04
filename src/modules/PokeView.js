@@ -1,4 +1,5 @@
 import heartIcon from '../assets/heart-icon.svg';
+
 class PokeView {
   #presenter;
 

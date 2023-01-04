@@ -1,4 +1,3 @@
-import PokeModel from './PokeModel.js';
 import PokePresenter from './PokePresenter.js';
 
 class PokeApiService {
@@ -21,7 +20,9 @@ class PokeApiService {
   getPokemonData = async (pokeId) => {
     const pokedata = await fetch(this.#baseUrl + pokeId)
       .then((response) => response.json());
-    const { id, name, sprites, types } = pokedata;
+    const {
+      id, name, sprites, types,
+    } = pokedata;
     const pokeTypes = [];
     types.forEach((element) => {
       pokeTypes.push(element.type.name);
