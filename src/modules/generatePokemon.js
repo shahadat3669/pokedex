@@ -21,10 +21,25 @@ const generatePokeBg = async (types) => {
   return result;
 };
 
+const generateTypesHtml = async (types) => {
+  let generateHtml = '';
+
+  if (types.length > 0) {
+    await types.forEach(async (type) => {
+      generateHtml += `<div tooltip="${type.type.name}">
+    <img class="type-img" src="./assets/${type.type.name}.svg" alt="${type.type.name}" />
+  </div>`;
+    });
+  }
+
+  return generateHtml;
+};
+
 const generatePokemon = async () => {
   const result = await getPokemonData();
   const { abilities, height, weight, id, name, stats, types, sprites } = result;
   const img = sprites.other.dream_world.front_default;
+  const typesHtml = await generateTypesHtml(types);
   const generatedPokeBg = await generatePokeBg(types);
 };
 
