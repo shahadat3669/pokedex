@@ -228,6 +228,7 @@ body {
   margin-left: auto;
   width: 1.5rem;
   height: 1.5rem;
+  border: none;
   border-radius: 50%;
   filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
   background: white;
@@ -237,8 +238,44 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);  
   height: 50%;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: translate(-50%, -50%) scale( .75 );
+  }
+  20%
+  {
+    transform: translate(-50%, -50%) scale( 1 );
+  }
+  40%
+  {
+    transform: translate(-50%, -50%) scale( .75 );
+  }
+  60%
+  {
+    transform: translate(-50%, -50%) scale( 1 );
+  }
+  80%
+  {
+    transform: translate(-50%, -50%) scale( .75 );
+  }
+  100%
+  {
+    transform: translate(-50%, -50%) scale( .75 );
+  }
+}
+
+.heart-icon-cont .like-icon:hover {
+  animation: heartbeat 1s infinite;
+}
+
+.heart-icon-cont:active {
+  filter: drop-shadow(0 -0.25rem 0.25rem rgba(0, 0, 0, 0.25));
 }
 
 .likes-count {
