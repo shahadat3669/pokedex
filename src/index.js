@@ -20,8 +20,5 @@ import './assets/psychic.svg';
 import './assets/rock.svg';
 import './assets/steel.svg';
 import './assets/water.svg';
-import generatePokemon from './modules/generatePokemon.js';
 
 start();
-const popUpbtn = document.querySelector('#popUpbtn');
-popUpbtn.addEventListener('click', generatePokemon);
