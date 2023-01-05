@@ -1,3 +1,4 @@
+import InvolvementApiService from './InvolvementApiService.js';
 import PokeModel from './PokeModel.js';
 import PokeView from './PokeView.js';
 
@@ -8,7 +9,11 @@ class PokePresenter {
 
   #gen = 5;
 
-  #likes =3;
+  static #involmentApi;
+
+  static {
+    this.#involmentApi = new InvolvementApiService();
+  }
 
   constructor(id, name, imgLink, types) {
     this.#model = new PokeModel(id, name, imgLink, types);
@@ -39,8 +44,6 @@ class PokePresenter {
     return this.#model.types;
   }
 
-  get likes() {
-    return this.#likes;
-  }
+  getLikes = async () => PokePresenter.#involmentApi.getLikesById(this.#model.id);
 }
 export default PokePresenter;
