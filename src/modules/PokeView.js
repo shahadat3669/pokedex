@@ -1,4 +1,5 @@
 import heartIcon from '../assets/heart-icon.svg';
+import generatePokemon from './generatePokemon.js';
 
 class PokeView {
   #presenter;
@@ -30,7 +31,6 @@ class PokeView {
     p.setAttribute('class', 'poke-id');
     p.innerText = this.#presenter.id;
     div.appendChild(p);
-
     p = document.createElement('p');
     p.setAttribute('class', 'poke-gen');
     p.innerText = this.#presenter.gen;
@@ -82,9 +82,10 @@ class PokeView {
     let span = document.createElement('span');
     span.innerText = 'COMMENTS';
     btn.appendChild(span);
-    btn.addEventListener('click', this.#presenter.openComments);
+    btn.addEventListener('click', async () => {
+      await generatePokemon(this.#presenter.id);
+    });
     div.appendChild(btn);
-
     btn = document.createElement('button');
     btn.setAttribute('type', 'button');
     btn.setAttribute('class', 'res-btn poke-btn');
@@ -96,6 +97,6 @@ class PokeView {
     pokeCard.appendChild(div);
 
     return pokeCard;
-  }
+  };
 }
 export default PokeView;

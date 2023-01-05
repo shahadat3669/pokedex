@@ -1,11 +1,10 @@
-const getPokemonData = async (pokiId) => {
-  const endpoint = `https://pokeapi.co/api/v2/pokemon/${pokiId}`;
+const getCommentsData = async (pokiId = 0) => {
+  const endpoint = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5KlkgNesq7R7nP80GFWz/comments?item_id=${pokiId}`;
   try {
     const response = await fetch(endpoint, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
-    if (!response.ok) throw new Error(response.statusText);
     return response.json();
   } catch (err) {
     throw new Error(
@@ -14,4 +13,4 @@ const getPokemonData = async (pokiId) => {
   }
 };
 
-export default getPokemonData;
+export default getCommentsData;

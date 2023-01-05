@@ -1,5 +1,6 @@
 import generatePokeBg from './generatePokeBg.js';
 import getPokemonData from './getPokemonData.js';
+import generateComments from './generateComments.js';
 
 const pokiPopup = document.querySelector('#pokiPopup');
 
@@ -47,8 +48,8 @@ const generateAbilitiesHtml = (abilities) => {
   return generateHtml;
 };
 
-const generatePokemon = async () => {
-  const result = await getPokemonData();
+const generatePokemon = async (pokiId) => {
+  const result = await getPokemonData(pokiId);
   const {
     abilities, height, weight, id, name, stats, types, sprites,
   } = result;
@@ -57,9 +58,9 @@ const generatePokemon = async () => {
   const generatedPokeBg = await generatePokeBg(types);
   const abilitiesHtml = await generateAbilitiesHtml(abilities);
   const statsHtml = await generateStatsHtml(stats);
-
+  const comments = await generateComments(pokiId);
   const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
-  <a class="close" href="#">&times;</a>
+    <button class="close">&times;</button>
     <div class="popup__img-container" style="${generatedPokeBg}">
       <img class="popup__img" src="${img}" alt="${name}" />
       <img src="./assets/oval.svg" alt="" class="popup__img-bg" />
@@ -81,10 +82,10 @@ const generatePokemon = async () => {
           <div class="measerments">
             <h4 class="title-4">Measurements:</h4>
             <p class="measurement">
-    <span class="measurement__title">Height : </span> ${height} M
+              <span class="measurement__title">Height : </span> ${height} M
             </p>
             <p class="measurement">
-    <span class="measurement__title">weight : </span> ${weight} kg
+              <span class="measurement__title">weight : </span> ${weight} kg
             </p>
           </div>
           <div class="abilities">
@@ -93,9 +94,20 @@ const generatePokemon = async () => {
           </div>
         </div>
       </div>
+      <div class="comments">
+      <h2 class="title-secondary">Comments (2)</h2>
+      <ul class="comments__list">
+       ${comments}
+      </ul>
+    </div>
     </div>
         </div>`;
   pokiPopup.innerHTML = generatedPokemonHtml;
+  pokiPopup.style.display = 'block';
+  const closeModal = () => {
+    pokiPopup.style.display = 'none';
+  };
+  document.querySelector('.close').addEventListener('click', closeModal);
 };
 
 export default generatePokemon;
