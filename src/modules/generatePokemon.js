@@ -1,6 +1,6 @@
 import generatePokeBg from './generatePokeBg.js';
 import getPokemonData from './getPokemonData.js';
-import generateComments from './generateComments';
+import generateComments from './generateComments.js';
 
 const pokiPopup = document.querySelector('#pokiPopup');
 
@@ -50,7 +50,9 @@ const generateAbilitiesHtml = (abilities) => {
 
 const generatePokemon = async (pokiId) => {
   const result = await getPokemonData(pokiId);
-  const { abilities, height, weight, id, name, stats, types, sprites } = result;
+  const {
+    abilities, height, weight, id, name, stats, types, sprites,
+  } = result;
   const img = sprites.other.dream_world.front_default;
   const typesHtml = await generateTypesHtml(types);
   const generatedPokeBg = await generatePokeBg(types);
