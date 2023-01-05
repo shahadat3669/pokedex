@@ -572,10 +572,7 @@ body {
   display: flex;
   gap: 0.5rem;
 }
-.comment__item-date {
-}
+
 .comment__item-user {
   font-weight: 500;
-}
-.comment__item-text {
 }
