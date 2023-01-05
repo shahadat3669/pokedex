@@ -64,12 +64,13 @@ class PokeView {
 
     div2 = document.createElement('div');
     div2.setAttribute('class', 'poke-likes');
-    const iconCont = document.createElement('div');
+    const iconCont = document.createElement('button');
     iconCont.setAttribute('class', 'heart-icon-cont');
 
     img = document.createElement('img');
     img.setAttribute('class', 'like-icon');
     img.src = heartIcon;
+    img.addEventListener('click', this.#presenter.addLike);
     iconCont.appendChild(img);
     div2.appendChild(iconCont);
 
