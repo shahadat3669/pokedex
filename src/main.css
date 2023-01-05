@@ -581,8 +581,21 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .add-comments__input {
   padding: 0.5rem;
+}
+
+.add-comments__input--hidden {
+  display: none;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.add-comments__btn:hover {
+  background: var(--fighting);
 }
