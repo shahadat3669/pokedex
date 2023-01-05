@@ -1,6 +1,5 @@
-const getPokemonData = async (
-  endpoint = 'https://pokeapi.co/api/v2/pokemon/bulbasaur',
-) => {
+const getPokemonData = async (pokiId) => {
+  const endpoint = `https://pokeapi.co/api/v2/pokemon/${pokiId}`;
   try {
     const response = await fetch(endpoint, {
       method: 'GET',
