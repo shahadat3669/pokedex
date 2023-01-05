@@ -8,7 +8,7 @@ class PokePresenter {
 
   #gen = 5;
 
-  #likes =3;
+  #likes;
 
   constructor(id, name, imgLink, types) {
     this.#model = new PokeModel(id, name, imgLink, types);
@@ -41,6 +41,11 @@ class PokePresenter {
 
   get likes() {
     return this.#likes;
+  }
+
+  set likes(count) {
+    this.#likes = count;
+    this.#view.updateLikes(count);
   }
 }
 export default PokePresenter;
