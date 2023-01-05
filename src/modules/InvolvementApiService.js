@@ -22,7 +22,7 @@ class InvolvementApiService {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
+    });
 
     return response.result;
   }

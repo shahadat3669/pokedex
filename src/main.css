@@ -238,35 +238,33 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
   height: 50%;
 }
 
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: translate(-50%, -50%) scale( .75 );
+@keyframes heartbeat {
+  0% {
+    transform: translate(-50%, -50%) scale(0.75);
   }
-  20%
-  {
-    transform: translate(-50%, -50%) scale( 1 );
+
+  20% {
+    transform: translate(-50%, -50%) scale(1);
   }
-  40%
-  {
-    transform: translate(-50%, -50%) scale( .75 );
+
+  40% {
+    transform: translate(-50%, -50%) scale(0.75);
   }
-  60%
-  {
-    transform: translate(-50%, -50%) scale( 1 );
+
+  60% {
+    transform: translate(-50%, -50%) scale(1);
   }
-  80%
-  {
-    transform: translate(-50%, -50%) scale( .75 );
+
+  80% {
+    transform: translate(-50%, -50%) scale(0.75);
   }
-  100%
-  {
-    transform: translate(-50%, -50%) scale( .75 );
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.75);
   }
 }
 
