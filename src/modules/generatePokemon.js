@@ -133,6 +133,29 @@ const generatePokemon = async (pokiId) => {
     pokiPopup.style.display = 'none';
   };
 
+  const newComment = document.querySelector('#addNewComment');
+  newComment.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const itemId = data.get('item_id');
+    const username = data.get('username');
+    const comment = data.get('comment');
+    if (itemId && username && comment) {
+      const result = await postComment({
+        item_id: itemId,
+        username,
+        comment,
+      });
+
+      if (result === 201) {
+        const generatedCommentsHtml = await generateComments(itemId);
+        document.querySelector('.comments__list').innerHTML =
+          generatedCommentsHtml;
+        newComment.reset();
+      }
+    }
+  });
+
   document.querySelector('.close').addEventListener('click', closeModal);
 };
 
