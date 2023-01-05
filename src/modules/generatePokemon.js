@@ -102,6 +102,10 @@ const generatePokemon = async (pokiId) => {
         </div>`;
   pokiPopup.innerHTML = generatedPokemonHtml;
   pokiPopup.style.display = 'block';
+  const closeModal = () => {
+    pokiPopup.style.display = 'none';
+  };
+  document.querySelector('.close').addEventListener('click', closeModal);
 };
 
 export default generatePokemon;
