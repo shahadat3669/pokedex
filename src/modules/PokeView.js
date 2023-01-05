@@ -17,9 +17,8 @@ class PokeView {
     return this.#ui;
   }
 
-  updateLikes = async () => {
-    const l = await this.#presenter.getLikes();
-    this.#likes.innerText = `${l} likes`;
+  updateLikes = (newCount) => {
+    this.#likes.innerText = `${newCount} likes`;
   }
 
   #createDOMElements = () => {
