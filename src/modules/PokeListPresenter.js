@@ -1,5 +1,5 @@
 import PokeApiService from './PokeApiService.js';
-import InvolvementApiService from './InvolvementApiService.js'
+import InvolvementApiService from './InvolvementApiService.js';
 import PokeListView from './PokeListView.js';
 
 class PokeListPresenter {
