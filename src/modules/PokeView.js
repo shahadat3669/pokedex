@@ -5,13 +5,21 @@ class PokeView {
 
   #ui;
 
+  #likes;
+
   constructor(presenter) {
     this.#presenter = presenter;
     this.#ui = this.#createDOMElements();
+    this.updateLikes();
   }
 
   get ui() {
     return this.#ui;
+  }
+
+  updateLikes = async () => {
+    const l = await this.#presenter.getLikes();
+    this.#likes.innerText = `${l} likes`;
   }
 
   #createDOMElements = () => {
@@ -66,10 +74,10 @@ class PokeView {
     iconCont.appendChild(img);
     div2.appendChild(iconCont);
 
-    p = document.createElement('p');
-    p.setAttribute('class', 'likes-count');
-    p.innerText = `${this.#presenter.likes} likes`;
-    div2.appendChild(p);
+    this.#likes = document.createElement('p');
+    this.#likes.setAttribute('class', 'likes-count');
+    this.#likes.innerText = '0 likes';
+    div2.appendChild(this.#likes);
     div.appendChild(div2);
     pokeCard.appendChild(div);
 
