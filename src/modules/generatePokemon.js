@@ -1,6 +1,7 @@
 import generatePokeBg from './generatePokeBg.js';
 import getPokemonData from './getPokemonData.js';
 import generateComments from './generateComments.js';
+import postComment from './postComments.js';
 
 const pokiPopup = document.querySelector('#pokiPopup');
 
@@ -59,6 +60,7 @@ const generatePokemon = async (pokiId) => {
   const abilitiesHtml = await generateAbilitiesHtml(abilities);
   const statsHtml = await generateStatsHtml(stats);
   const comments = await generateComments(pokiId);
+
   const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
     <button class="close">&times;</button>
     <div class="popup__img-container" style="${generatedPokeBg}">
@@ -100,13 +102,61 @@ const generatePokemon = async (pokiId) => {
        ${comments}
       </ul>
     </div>
+    <div class="add-comments">
+      <h2 class="title-secondary text--center">Add comment</h2>
+      <form method="post" class="add-comments__form" id="addNewComment">
+        <input
+          value="${id}"
+          type="text"
+          name="item_id"
+          class="add-comments__input--hidden"
+        />
+        <input
+          name="username"
+          type="text"
+          class="add-comments__input"
+          placeholder="Your name"
+        />
+        <textarea
+          placeholder="Your insights"
+          name="comment"
+          cols="2"
+          rows="2"
+          class="add-comments__input"
+        ></textarea>
+        <button class="add-comments__btn com-btn poke-btn">Comment</button>
+      </form>
     </div>
-        </div>`;
+    </div>
+  </div>`;
   pokiPopup.innerHTML = generatedPokemonHtml;
   pokiPopup.style.display = 'block';
   const closeModal = () => {
     pokiPopup.style.display = 'none';
   };
+
+  const newComment = document.querySelector('#addNewComment');
+  newComment.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const itemId = data.get('item_id');
+    const username = data.get('username');
+    const comment = data.get('comment');
+    if (itemId && username && comment) {
+      const result = await postComment({
+        item_id: itemId,
+        username,
+        comment,
+      });
+
+      if (result === 201) {
+        const generatedCommentsHtml = await generateComments(itemId);
+        document.querySelector('.comments__list').innerHTML = generatedCommentsHtml;
+        newComment.reset();
+      }
+    }
+  });
+
   document.querySelector('.close').addEventListener('click', closeModal);
 };
 
