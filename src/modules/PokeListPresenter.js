@@ -1,4 +1,5 @@
 import PokeApiService from './PokeApiService.js';
+import InvolvementApiService from './InvolvementApiService.js'
 import PokeListView from './PokeListView.js';
 
 class PokeListPresenter {
@@ -6,8 +7,11 @@ class PokeListPresenter {
 
   #view;
 
+  #involvement;
+
   constructor() {
     this.#model = new PokeApiService();
+    this.#involvement = new InvolvementApiService();
     this.#view = new PokeListView(this);
   }
 
@@ -17,10 +21,14 @@ class PokeListPresenter {
 
   get cardsUi() {
     return (async () => {
+      const likes = await this.#involvement.getAllLikes();
       const cards = [];
-      const pokeData = await this.#model.getSomePokemonData(1, 200);
+      const pokeData = await this.#model.getSomePokemonData(1, 9);
 
+      let lik;
       pokeData.forEach((element) => {
+        lik = likes.find((item) => item.item_id === element.id);
+        element.likes = (lik !== undefined) ? lik.likes : 0;
         cards.push(element.view.ui);
       });
 
