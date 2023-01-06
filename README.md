@@ -81,9 +81,9 @@
 
 ## 👁 Presentation video <a name="video"></a>
 
-- [Presentation video link](https://shahadat3669.github.io/pokedex/dist/index.html)
 
-[<img src="./dist/assets/logo.svg" width="50%">](./presentation/video.mp4)
+https://user-images.githubusercontent.com/55840999/211104208-0fe78cf8-b8c4-4197-8e48-673c2580441e.mp4
+- [Presentation video link](./presentation/video.mp4)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
