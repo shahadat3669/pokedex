@@ -63,3 +63,18 @@ const tenComments = [
     creation_date: '2023-01-06',
   },
 ];
+
+// Act
+const noCommentsOutput = commentsCounter(noCommentJson);
+const tenCommentsOutput = commentsCounter(tenComments);
+
+// Assert
+describe('commentsCounter method', () => {
+  test(addMessage.input_0, () => {
+    expect(noCommentsOutput).toBe(0);
+  });
+
+  test(addMessage.input_10_5, () => {
+    expect(tenCommentsOutput).toBe(10);
+  });
+});
