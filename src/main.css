@@ -247,6 +247,7 @@ body {
   border: solid 1px transparent;
   border-radius: 50%;
   box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
+  cursor: pointer;
 }
 
 .heart-icon-cont::before {

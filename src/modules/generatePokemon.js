@@ -71,7 +71,6 @@ const generatePokemon = async (pokiId) => {
     <div class="popup__content">
       <div class="popup__content-top">
         <h2 class="title-secondary">${name}</h2>
-        <p>21 Likes</p>
       </div>
       <div class="types">
         ${typesHtml}
