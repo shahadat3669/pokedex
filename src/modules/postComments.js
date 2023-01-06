@@ -1,5 +1,5 @@
 const postComment = async (data) => {
-  const endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5KlkgNesq7R7nP80GFWz/comments';
+  const endpoint = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uVghFZUXyAONTeUqAIXl/comments';
   try {
     const response = await fetch(endpoint, {
       method: 'POST',

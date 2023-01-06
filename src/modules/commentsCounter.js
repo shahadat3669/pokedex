@@ -1,8 +1,8 @@
-const commentsCounter = async (commentList) => {
+const commentsCounter = (commentList) => {
   let counter = 0;
 
   if (!commentList.error) {
-    await commentList.forEach(async (comment, index) => {
+    commentList.forEach((comment, index) => {
       counter = index + 1;
     });
   }
