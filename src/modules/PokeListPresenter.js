@@ -7,11 +7,8 @@ class PokeListPresenter {
 
   #view;
 
-  #involvement;
-
   constructor() {
     this.#model = new PokeApiService();
-    this.#involvement = new InvolvementApiService();
     this.#view = new PokeListView(this);
   }
 
@@ -21,7 +18,7 @@ class PokeListPresenter {
 
   get cardsUi() {
     return (async () => {
-      const likes = await this.#involvement.getAllLikes();
+      const likes = await InvolvementApiService.getAllLikes();
       const cards = [];
       const pokeData = await this.#model.getSomePokemonData(1, 9);
 
