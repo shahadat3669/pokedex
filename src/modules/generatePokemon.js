@@ -51,9 +51,7 @@ const generateAbilitiesHtml = (abilities) => {
 
 const generatePokemon = async (pokiId) => {
   const result = await getPokemonData(pokiId);
-  const {
-    abilities, height, weight, id, name, stats, types, sprites,
-  } = result;
+  const { abilities, height, weight, id, name, stats, types, sprites } = result;
   const img = sprites.other.dream_world.front_default;
   const typesHtml = await generateTypesHtml(types);
   const generatedPokeBg = await generatePokeBg(types);
@@ -97,10 +95,7 @@ const generatePokemon = async (pokiId) => {
         </div>
       </div>
       <div class="comments">
-      <h2 class="title-secondary">Comments (2)</h2>
-      <ul class="comments__list">
-       ${comments}
-      </ul>
+      ${comments}
     </div>
     <div class="add-comments">
       <h2 class="title-secondary text--center">Add comment</h2>
@@ -151,7 +146,7 @@ const generatePokemon = async (pokiId) => {
 
       if (result === 201) {
         const generatedCommentsHtml = await generateComments(itemId);
-        document.querySelector('.comments__list').innerHTML = generatedCommentsHtml;
+        document.querySelector('.comments').innerHTML = generatedCommentsHtml;
         newComment.reset();
       }
     }
