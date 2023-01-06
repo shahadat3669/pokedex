@@ -60,6 +60,7 @@ const generatePokemon = async (pokiId) => {
   const comments = await generateComments(pokiId);
 
   const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
+    <p class="pokemon-id">#${pokiId}</p>
     <button class="close">&times;</button>
     <div class="popup__img-container" style="${generatedPokeBg}">
       <img class="popup__img" src="${img}" alt="${name}" />
