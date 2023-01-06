@@ -62,6 +62,7 @@ const generatePokemon = async (pokiId) => {
   const comments = await generateComments(pokiId);
 
   const generatedPokemonHtml = await `<div class="popup__container" id= ${id}>
+    <p class="pokemon-id">#${pokiId}</p>
     <button class="close">&times;</button>
     <div class="popup__img-container" style="${generatedPokeBg}">
       <img class="popup__img" src="${img}" alt="${name}" />
@@ -97,10 +98,7 @@ const generatePokemon = async (pokiId) => {
         </div>
       </div>
       <div class="comments">
-      <h2 class="title-secondary">Comments (2)</h2>
-      <ul class="comments__list">
-       ${comments}
-      </ul>
+      ${comments}
     </div>
     <div class="add-comments">
       <h2 class="title-secondary text--center">Add comment</h2>
@@ -151,7 +149,7 @@ const generatePokemon = async (pokiId) => {
 
       if (result === 201) {
         const generatedCommentsHtml = await generateComments(itemId);
-        document.querySelector('.comments__list').innerHTML = generatedCommentsHtml;
+        document.querySelector('.comments').innerHTML = generatedCommentsHtml;
         newComment.reset();
       }
     }

@@ -359,6 +359,16 @@ body {
   max-height: 90vh;
 }
 
+.popup__container .pokemon-id {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 3.2rem;
+  font-weight: var(--font-bold);
+  color: var(--text-dark);
+  z-index: 10;
+}
+
 .popup__container h2 {
   margin-top: 0;
   color: #333;
@@ -415,7 +425,6 @@ body {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 90%;
   z-index: 99;
 }
 
