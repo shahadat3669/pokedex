@@ -24,7 +24,7 @@ class InvolvementApiService {
       },
     });
 
-    return response.result;
+    return response;
   }
 
   static getLikesById = async (pokeId) => {

@@ -20,7 +20,7 @@ class PokeListPresenter {
     return (async () => {
       const likes = await InvolvementApiService.getAllLikes();
       const cards = [];
-      const pokeData = await this.#model.getSomePokemonData(1, 9);
+      const pokeData = await this.#model.getSomePokemonData(25, 18);
 
       let lik;
       pokeData.forEach((element) => {

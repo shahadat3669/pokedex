@@ -20,5 +20,6 @@ import './assets/psychic.svg';
 import './assets/rock.svg';
 import './assets/steel.svg';
 import './assets/water.svg';
+import './assets/logo.svg';
 
 start();
