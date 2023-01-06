@@ -74,7 +74,7 @@ describe('commentsCounter method', () => {
     expect(noCommentsOutput).toBe(0);
   });
 
-  test(addMessage.input_10_5, () => {
+  test(addMessage.input_10, () => {
     expect(tenCommentsOutput).toBe(10);
   });
 });
