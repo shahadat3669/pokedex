@@ -128,7 +128,7 @@ body {
   height: var(--poke-card-height);
   border-radius: var(--radius-8);
   background: white;
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 10.125px 8.71875px rgba(0, 0, 0, 0.0675), 0px 4px 3.25px rgba(0, 0, 0, 0.05), 0px 0.875px 1.15625px rgba(0, 0, 0, 0.0325);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1), 0 10.125px 8.71875px rgba(0, 0, 0, 0.0675), 0 4px 3.25px rgba(0, 0, 0, 0.05), 0 0.875px 1.15625px rgba(0, 0, 0, 0.0325);
 }
 
 .poke-card:hover {
