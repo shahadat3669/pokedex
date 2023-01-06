@@ -16,8 +16,8 @@ const generateComments = async (pokiId) => {
         </li>`;
     });
   } else {
-    generateHtml +=
-      '<li class="comments__item"><span class="comment__item-user">No comments.</span></li>';
+    generateHtml
+      += '<li class="comments__item"><span class="comment__item-user">No comments.</span></li>';
   }
   generateHtml = `<h2 class="title-secondary">Comments (${totalComments})</h2>
   <ul class="comments__list">
