@@ -1,6 +1,6 @@
 function AllPokesCounter() {
   const pokeCount = document.getElementsByClassName('poke-card').length;
   const pokeCountText = document.getElementById('poke-counter');
-  pokeCountText.innerText = `(${pokeCount})`;
+  pokeCountText.innerHTML = `(${pokeCount})`;
 }
 export default AllPokesCounter;
