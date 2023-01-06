@@ -82,8 +82,8 @@ body {
 
 .nav-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
 }
 
 .nav-item {
@@ -661,6 +661,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .nav-bar {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
   .poke-card {
     width: var(--poke-card-width2);
     height: var(--poke-card-height2);
@@ -702,6 +707,11 @@ body {
 @media (min-width: 69rem) {
   .poke-cards-cont {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-bar {
+    flex-direction: row;
+    gap: 2.5rem;
   }
 
   .poke-card {
